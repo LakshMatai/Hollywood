@@ -9,7 +9,7 @@
 import UIKit
 class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     var imageArray = [UIImage(named:"1"),UIImage(named:"2"),UIImage(named:"3"),UIImage(named:"4"),UIImage(named:"5"),UIImage(named:"6")]
-    var labelArray = ["Fault in our stars","Jaws","Avengers","Sherlock Holmes", "The Shawshank Redemption", "Moonlight"]
+    var labelArray = ["Fault in our stars","Jaws","The Avengers","Sherlock Holmes", "The Shawshank Redemption", "Moonlight"]
     
     var actorImages = [UIImage(named:"a"),UIImage(named:"b"),UIImage(named:"c"),UIImage(named:"d"),UIImage(named:"e"),UIImage(named:"f")]
     
