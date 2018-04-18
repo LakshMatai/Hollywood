@@ -32,39 +32,7 @@ class MovieVC: UIViewController {
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    func getValues(){
-       // let configuration = URLSessionConfiguration .default
-        let session = URLSession.shared
-        guard let url = URL(string: "https://inf551-aecfc.firebaseio.com/movies.json?orderBy=%22$key%22&equaTo=Avatar&limitToFirst=1") else{
-            print("Error creating url")
-            return
-        }
-        let urlRequest = URLRequest(url: url)
-        
-        
-        let task = session.dataTask(with:urlRequest){
-            (data,reponse,error) in DispatchQueue.main.async {
-            guard let responseData = data else {
-                print("Error receiving data")
-                return
-            }
-            
-            do{
-                guard let receivedData = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String:Any] else {
-                    print("Could not get JSON data")
-                    return
-                }
-            }
-            catch{
-                print("Error trying to convert data to json")
-                return
-            }
-                
-            }
-            
-        }
-        task.resume()
-        }
+   
     var overviewText:String = ""
     var genreText = [String]()
     var genreT: String = "Genres: "
@@ -80,6 +48,8 @@ class MovieVC: UIViewController {
                 //print(jsonObject.startIndex)
                 for(key,value) in jsonObject{
                     self.overviewLabel.text = jsonObject[key]!["overview"] as! String
+                   // self.ratings.text = "\(jsonObject[key]!["vote_average"])"
+                   self.ratings.text = String( describing: jsonObject[key]!["vote_average"] as! NSNumber)
                     print(self.overviewText)
                     var genres = jsonObject[key]!["genres"] as! [Dictionary<String,AnyObject>]
                     for gen in genres{

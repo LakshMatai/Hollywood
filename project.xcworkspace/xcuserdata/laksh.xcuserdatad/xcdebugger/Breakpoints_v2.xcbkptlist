@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/MovieVC.swift"
-            timestampString = "545452603.565176"
+            timestampString = "545536411.4912421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "tryAlamo()"
-            landmarkType = "7">
+            endingLineNumber = "74">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -58,13 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/MovieVC.swift"
-            timestampString = "545452603.565328"
+            timestampString = "545536411.491327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "tryAlamo()"
-            landmarkType = "7">
+            startingLineNumber = "74"
+            endingLineNumber = "74">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -106,29 +102,25 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/MovieVC.swift"
-            timestampString = "545452603.56542"
+            timestampString = "545536411.491381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "tryAlamo()"
-            landmarkType = "7">
+            startingLineNumber = "74"
+            endingLineNumber = "74">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/MovieVC.swift"
-            timestampString = "545452603.565833"
+            timestampString = "545536411.4914269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "tryAlamo()"
-            landmarkType = "7">
+            startingLineNumber = "74"
+            endingLineNumber = "74">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
