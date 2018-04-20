@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class MovieVC: UIViewController {
 
@@ -39,27 +40,34 @@ class MovieVC: UIViewController {
     
     func tryAlamo(){
         
-        request("https://inf551-aecfc.firebaseio.com/movies.json?orderBy=%22title%22&equalTo=%22The%20Avengers%22&limitToFirst=1").responseJSON{ response in
-            if let JSON = response.result.value{
-                var jsonObject = JSON as! [String:AnyObject]
-             //   var origin = jsonObject["origin"] as! String
-               // var url = jsonObject as! NSDictionary
-              //  print (jsonObject["a000!%5362657"]!["overview"])
-                //print(jsonObject.startIndex)
+        request("https://inf551-aecfc.firebaseio.com/movies_metadata.json?orderBy=%22title%22&equalTo=%22The%20Avengers%22").responseJSON{ response in
+            if let JSONtext = response.result.value{
+                var jsonObject = JSONtext as! [String:AnyObject]
                 for(key,value) in jsonObject{
                     self.overviewLabel.text = jsonObject[key]!["overview"] as! String
                    // self.ratings.text = "\(jsonObject[key]!["vote_average"])"
                    self.ratings.text = String( describing: jsonObject[key]!["vote_average"] as! NSNumber)
                     print(self.overviewText)
-                    var genres = jsonObject[key]!["genres"] as! [Dictionary<String,AnyObject>]
-                    for gen in genres{
-                        //self.genreText.append (gen["name"] as! String)
-                        self.genreT += gen["name"] as! String
-                        self.genreT += ", "
+                    var genres = jsonObject[key]!["genres"] as! String
+                    //var genArray = [Dictionary<String,AnyObject>]
+                    genres = genres.replacingOccurrences(of: "'", with: "\"",options: .literal, range: nil)
+                   print(genres)
+                    if let dataFromString = genres.data(using: String.Encoding.utf8,allowLossyConversion: false){
+                       let genresArray = JSON(data: dataFromString)
+                        for (key,subJson):(String,JSON) in genresArray{
+                            
+                            self.genreT += "\(subJson["name"])"
+                            self.genreT += ", "
+                            //print("\(subJson["name"])")
+                        }
                     }
                     self.genreT = self.genreT.substring(to: self.genreT.index(before: self.genreT.endIndex))
                     self.genreT = self.genreT.substring(to: self.genreT.index(before: self.genreT.endIndex))
                     self.genreLabel.text = self.genreT
+                    var filePath = jsonObject[key]!["poster_path"] as! String
+                    if let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500"+filePath){
+                        self.downloadImage(url: imgUrl)
+                    }
                 }
             }
             
@@ -67,7 +75,24 @@ class MovieVC: UIViewController {
         }
         
     }
-        
+    func downloadImage(url: URL){
+        print("Download Started")
+        getDataFromUrl(url: url){ data,response,error in
+            guard let data = data, error == nil else {return}
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.bgImage.image = UIImage(data: data)
+            }
+            
+        }
+       
+    }
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) ->()){
+        URLSession.shared.dataTask(with: url){ data,response,error in
+            completion(data,response,error)
+        }.resume()
+    }
         
     }
 

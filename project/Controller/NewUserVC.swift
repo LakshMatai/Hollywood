@@ -13,7 +13,11 @@ class NewUserVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     
     @IBOutlet weak var chosenImage: UIImageView!
     
+    @IBOutlet weak var emailTxt: UITextField!
+    
     @IBAction func addBtnPressed(_ sender: Any) {
+        
+        
         
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             var imagePicker = UIImagePickerController()

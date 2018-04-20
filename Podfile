@@ -10,4 +10,5 @@ target 'project' do
   # Pods for project
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Firebase/Core'
 end
