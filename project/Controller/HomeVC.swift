@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate {
     var imageArray = [UIImage(named:"1"),UIImage(named:"2"),UIImage(named:"3"),UIImage(named:"4"),UIImage(named:"5"),UIImage(named:"6")]
     var labelArray = ["The Fault in Our Stars","Jaws","The Avengers","Sherlock Holmes", "The Shawshank Redemption", "Moonlight"]
     
@@ -19,10 +19,20 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     //Outlets
     @IBOutlet weak var menuBtn: UIButton!
     
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
+    @IBOutlet weak var segmentSelected: UISegmentedControl!
     
     @IBOutlet weak var actorCollectionView: UICollectionView!
+    
+    @IBAction func editingTestView(_ sender: Any) {
+        segmentSelected.isHidden = false
+    }
+    @IBAction func editingEndTestView(_ sender: Any) {
+        segmentSelected.isHidden = true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +40,24 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        searchField.delegate = self
         
         //view.addGestureRecognizer(tap)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+       
+        textField.resignFirstResponder()
+        if segmentSelected.selectedSegmentIndex == 0 {
+            selectedActorName = textField.text as! String
+            performSegue(withIdentifier: "homeToActorSegue", sender: self)
+        }
+        else{
+            selectedMovieName = textField.text as! String
+            performSegue(withIdentifier: "movieDetailsSegue", sender: self)
+        }
+        return true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

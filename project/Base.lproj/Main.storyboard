@@ -65,14 +65,18 @@
                                     <constraint firstItem="Yoo-Mr-goy" firstAttribute="centerY" secondItem="IZz-Nx-r3f" secondAttribute="centerY" id="lF2-oR-lZs"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Oq-FY-6mH">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Oq-FY-6mH">
                                 <rect key="frame" x="12" y="89" width="351" height="30"/>
                                 <color key="textColor" red="0.2901960784" green="0.30196078430000001" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <action selector="editingEndTestView:" destination="Ze0-Zx-Sys" eventType="editingDidEnd" id="8h1-2l-1z7"/>
+                                    <action selector="editingTestView:" destination="Ze0-Zx-Sys" eventType="editingDidBegin" id="q8d-ev-4Dz"/>
+                                </connections>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-ND-GkG">
-                                <rect key="frame" x="12" y="166" width="351" height="200"/>
+                                <rect key="frame" x="12" y="198" width="351" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ypR-xP-MEH"/>
@@ -126,19 +130,19 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNN-2W-rjR">
-                                <rect key="frame" x="12" y="131" width="87.5" height="23"/>
+                                <rect key="frame" x="12" y="163" width="87.5" height="23"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Actors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0U-te-SUx">
-                                <rect key="frame" x="12" y="378" width="83" height="21"/>
+                                <rect key="frame" x="12" y="410" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-IO-Hno">
-                                <rect key="frame" x="12" y="411" width="351" height="200"/>
+                                <rect key="frame" x="12" y="443" width="351" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="sjR-IQ-ccM"/>
@@ -192,6 +196,13 @@
                                     <outlet property="delegate" destination="Ze0-Zx-Sys" id="XCa-kO-fdR"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vQS-39-IjZ">
+                                <rect key="frame" x="136" y="127" width="103" height="29"/>
+                                <segments>
+                                    <segment title="Actor"/>
+                                    <segment title="Movie"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -202,16 +213,18 @@
                             <constraint firstItem="6Oq-FY-6mH" firstAttribute="leading" secondItem="ruQ-7X-EZP" secondAttribute="leading" constant="12" id="FJM-e0-mJT"/>
                             <constraint firstItem="Uqj-ND-GkG" firstAttribute="leading" secondItem="ruQ-7X-EZP" secondAttribute="leading" constant="12" id="I2Y-Fd-UAv"/>
                             <constraint firstItem="ruQ-7X-EZP" firstAttribute="trailing" secondItem="Uqj-ND-GkG" secondAttribute="trailing" constant="12" id="MQA-pt-llr"/>
+                            <constraint firstItem="hNN-2W-rjR" firstAttribute="top" secondItem="6Oq-FY-6mH" secondAttribute="bottom" constant="44" id="Owo-Xm-V8l"/>
                             <constraint firstItem="Bss-j3-MeS" firstAttribute="leading" secondItem="ruQ-7X-EZP" secondAttribute="leading" id="TpB-HQ-cMr"/>
                             <constraint firstItem="S0U-te-SUx" firstAttribute="top" secondItem="Uqj-ND-GkG" secondAttribute="bottom" constant="12" id="Vib-1X-F0F"/>
                             <constraint firstItem="Bss-j3-MeS" firstAttribute="top" secondItem="2Eh-KY-eTd" secondAttribute="top" id="XGq-qt-Boq"/>
                             <constraint firstItem="HnC-IO-Hno" firstAttribute="centerX" secondItem="2Eh-KY-eTd" secondAttribute="centerX" id="YZk-j5-WP0"/>
+                            <constraint firstItem="vQS-39-IjZ" firstAttribute="top" secondItem="6Oq-FY-6mH" secondAttribute="bottom" constant="8" id="Z2W-Im-8Vm"/>
                             <constraint firstItem="hNN-2W-rjR" firstAttribute="leading" secondItem="ruQ-7X-EZP" secondAttribute="leading" constant="12" id="eVw-JE-Hgq"/>
                             <constraint firstItem="HnC-IO-Hno" firstAttribute="top" secondItem="S0U-te-SUx" secondAttribute="bottom" constant="12" id="iYM-e9-ggw"/>
                             <constraint firstItem="Bss-j3-MeS" firstAttribute="trailing" secondItem="ruQ-7X-EZP" secondAttribute="trailing" id="kBe-Ae-gyw"/>
                             <constraint firstItem="HnC-IO-Hno" firstAttribute="leading" secondItem="ruQ-7X-EZP" secondAttribute="leading" constant="12" id="vXk-GB-ZAU"/>
                             <constraint firstItem="6Oq-FY-6mH" firstAttribute="top" secondItem="Bss-j3-MeS" secondAttribute="bottom" constant="12" id="vY7-Dm-6Ko"/>
-                            <constraint firstItem="hNN-2W-rjR" firstAttribute="top" secondItem="6Oq-FY-6mH" secondAttribute="bottom" constant="12" id="zoH-DV-xmG"/>
+                            <constraint firstItem="vQS-39-IjZ" firstAttribute="centerX" secondItem="2Eh-KY-eTd" secondAttribute="centerX" id="wP7-GN-PnE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ruQ-7X-EZP"/>
                     </view>
@@ -219,13 +232,15 @@
                         <outlet property="actorCollectionView" destination="HnC-IO-Hno" id="f8z-iX-9z7"/>
                         <outlet property="imageCollectionView" destination="Uqj-ND-GkG" id="Wh6-Hx-TGp"/>
                         <outlet property="menuBtn" destination="IZz-Nx-r3f" id="YLk-gq-b9D"/>
+                        <outlet property="searchField" destination="6Oq-FY-6mH" id="4H9-Ns-CnL"/>
+                        <outlet property="segmentSelected" destination="vQS-39-IjZ" id="Ucj-5b-MTQ"/>
                         <segue destination="hFR-a6-Bsg" kind="presentation" identifier="movieDetailsSegue" id="aR7-2l-QjZ"/>
                         <segue destination="sxX-WM-Ojf" kind="show" identifier="homeToActorSegue" id="Y6t-Pn-lRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPU-Bq-YpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248.8" y="450.22488755622192"/>
+            <point key="canvasLocation" x="959" y="447"/>
         </scene>
         <!--MovieVC-->
         <scene sceneID="do8-LW-HQS">

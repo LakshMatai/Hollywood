@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/HomeVC.swift"
-            timestampString = "546141177.726429"
+            timestampString = "546166895.560459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/HomeVC.swift"
-            timestampString = "546141177.726532"
+            timestampString = "546166895.5609289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,7 +346,7 @@
                   moduleName = "project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/iOS%20Apps/project/project/Controller/MovieVC.swift"
-                  timestampString = "546140241.714781"
+                  timestampString = "546166895.869321"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
@@ -361,7 +361,7 @@
                   moduleName = "project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/iOS%20Apps/project/project/Controller/MovieVC.swift"
-                  timestampString = "546140241.716471"
+                  timestampString = "546166895.87095"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "142"
@@ -394,7 +394,7 @@
                   moduleName = "project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/iOS%20Apps/project/project/Controller/MovieVC.swift"
-                  timestampString = "546140241.720816"
+                  timestampString = "546166895.87532"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
@@ -409,7 +409,7 @@
                   moduleName = "project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/iOS%20Apps/project/project/Controller/MovieVC.swift"
-                  timestampString = "546140241.722458"
+                  timestampString = "546166895.877023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Controller/ActorVC.swift"
-            timestampString = "546138302.753337"
+            timestampString = "546166895.561367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -538,7 +538,7 @@
                   moduleName = "project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/iOS%20Apps/project/project/Controller/ActorVC.swift"
-                  timestampString = "546140241.742745"
+                  timestampString = "546166895.898237"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -553,7 +553,7 @@
                   moduleName = "project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/iOS%20Apps/project/project/Controller/ActorVC.swift"
-                  timestampString = "546140241.7443711"
+                  timestampString = "546166895.89992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
@@ -561,6 +561,38 @@
                   offsetFromSymbolStart = "36">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/Controller/HomeVC.swift"
+            timestampString = "546166895.5614229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/Controller/HomeVC.swift"
+            timestampString = "546166895.561679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "editingTestView(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
