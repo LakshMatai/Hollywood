@@ -18,6 +18,8 @@ class MovieVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSo
     var actorArray = [String]()
     var characterArray = [String]()
     var actorImagesArray = [UIImage]()
+    var selectedActor:String = ""
+    
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -226,6 +228,19 @@ class MovieVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSo
         cell.actorName.text = actorArray[indexPath.row]
         cell.actorImage.image = actorImagesArray[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedActor = actorArray[indexPath.row] as String
+        performSegue(withIdentifier: "movieToActorSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movieToActorSegue"{
+            let controller = segue.destination as! ActorVC
+            controller.actorName = selectedActor
+            
+        }
     }
     
     

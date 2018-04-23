@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A08F61D2082B6F300E7FEAB /* movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08F61C2082B6F300E7FEAB /* movies.swift */; };
 		5A144134208C1F1E0044961E /* castCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A144133208C1F1E0044961E /* castCollectionViewCell.swift */; };
+		5A144136208D51EF0044961E /* ActorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A144135208D51EF0044961E /* ActorVC.swift */; };
 		5A30628D205B019600B49000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30628C205B019600B49000 /* AppDelegate.swift */; };
 		5A30628F205B019600B49000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30628E205B019600B49000 /* ViewController.swift */; };
 		5A306292205B019600B49000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A306290205B019600B49000 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		592E323E7003DAF7EA981283 /* Pods-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project.release.xcconfig"; path = "Pods/Target Support Files/Pods-project/Pods-project.release.xcconfig"; sourceTree = "<group>"; };
 		5A08F61C2082B6F300E7FEAB /* movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movies.swift; sourceTree = "<group>"; };
 		5A144133208C1F1E0044961E /* castCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = castCollectionViewCell.swift; sourceTree = "<group>"; };
+		5A144135208D51EF0044961E /* ActorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorVC.swift; sourceTree = "<group>"; };
 		5A306289205B019600B49000 /* project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A30628C205B019600B49000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A30628E205B019600B49000 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				5A737A832070921B00E0CC3E /* MovieVC.swift */,
 				5A9FEECA2084343D00D74AE3 /* SignInViewController.swift */,
 				5A9FEECC20843E9900D74AE3 /* NewUserVC.swift */,
+				5A144135208D51EF0044961E /* ActorVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A08F61D2082B6F300E7FEAB /* movies.swift in Sources */,
+				5A144136208D51EF0044961E /* ActorVC.swift in Sources */,
 				5A144134208C1F1E0044961E /* castCollectionViewCell.swift in Sources */,
 				5A30628F205B019600B49000 /* ViewController.swift in Sources */,
 				5A737A842070921B00E0CC3E /* MovieVC.swift in Sources */,

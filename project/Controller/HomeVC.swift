@@ -15,6 +15,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     var actorNames = ["Robert Downey Jr.", "Zack Efron","Ryan Gosling", "Benedict Cumberbatch", "Chris Pratt", "Bradley Cooper"]
     var selectedMovieName:String = ""
+    var selectedActorName:String = ""
     //Outlets
     @IBOutlet weak var menuBtn: UIButton!
     
@@ -73,12 +74,24 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             let controller = segue.destination as! MovieVC
             controller.selectedMovieName = selectedMovieName
         }
+        else {
+            let controller = segue.destination as! ActorVC
+            controller.actorName = selectedActorName
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        selectedMovieName = labelArray[indexPath.row] as String
-        self.performSegue(withIdentifier: "movieDetailsSegue", sender: self)
+        if collectionView == actorCollectionView{
+            
+            selectedActorName = actorNames[indexPath.row] as String
+            self.performSegue(withIdentifier: "homeToActorSegue", sender: self)
+        }
+        if collectionView == imageCollectionView{
+            
+            selectedMovieName = labelArray[indexPath.row] as String
+            self.performSegue(withIdentifier: "movieDetailsSegue", sender: self)
+        }
+       
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
