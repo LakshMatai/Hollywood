@@ -44,6 +44,11 @@ class AdvancedSearchVC: UIViewController {
     }
     
     
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "savedSearchesSegue", sender: self)
+    }
+    
+    
     @IBAction func crimeRomance(_ sender: Any) {
         segment1.selectedSegmentIndex = UISegmentedControlNoSegment
         segment3.selectedSegmentIndex = UISegmentedControlNoSegment
@@ -132,6 +137,7 @@ class AdvancedSearchVC: UIViewController {
       
         
     }
+    
     func getData(genre:String, date: String) {
         
         var genreArray = [String]()
@@ -182,6 +188,7 @@ class AdvancedSearchVC: UIViewController {
         if segue.identifier == "searchToResultSegue"{
             let controller = segue.destination as! SearchResultsVC
             controller.data = finalArray
+            controller.saveKey = selectedDate+" "+selectedGenre
         }
     }
     

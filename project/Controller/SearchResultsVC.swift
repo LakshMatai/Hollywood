@@ -11,6 +11,9 @@ import UIKit
 class SearchResultsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var data = [String]()
     var movie:String = ""
+    var saveKey:String = ""
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return (data.count)
     }
@@ -21,12 +24,38 @@ class SearchResultsVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         return cell
     }
     
-
     
+    
+
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(data, forKey: saveKey)
+        print("saved  \(saveKey)")
+        let alert = UIAlertController(title: "Alert", message: "Your search has been saved under the title \(self.saveKey)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            action in switch action.style{
+            case .default:
+                print("default")
+            
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+
+            }
+        }
+        
+    ))
+self.present(alert,animated: true, completion: nil)
+    
+}
     
     override func viewDidLoad() {
         super.viewDidLoad()
