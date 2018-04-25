@@ -17,6 +17,9 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     var selectedMovieName:String = ""
     var selectedActorName:String = ""
     //Outlets
+    
+    
+    @IBOutlet weak var advancedSearchBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
     
     @IBOutlet weak var searchField: UITextField!
@@ -28,11 +31,17 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     @IBAction func editingTestView(_ sender: Any) {
         segmentSelected.isHidden = false
+        advancedSearchBtn.isHidden = false
     }
     @IBAction func editingEndTestView(_ sender: Any) {
         segmentSelected.isHidden = true
+        advancedSearchBtn.isHidden = true
     }
     
+    
+    @IBAction func AdvancedSearchBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "HomeToSearchSegue", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +108,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             let controller = segue.destination as! MovieVC
             controller.selectedMovieName = selectedMovieName
         }
-        else {
+        else if segue.identifier == "homeToActorSegue"{
             let controller = segue.destination as! ActorVC
             controller.actorName = selectedActorName
         }

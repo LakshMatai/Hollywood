@@ -97,7 +97,7 @@ class MovieVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSo
             guard let data = data, error == nil else {return}
          //   print(response?.suggestedFilename ?? url.lastPathComponent)
            // print("Download Finished")
-            DispatchQueue.main.async() {
+            DispatchQueue.main.sync() {
                 self.bgImage.image = UIImage(data: data)
             }
             
